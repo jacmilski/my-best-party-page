@@ -13,6 +13,17 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `dominantColor`,
+          quality: 90,
+        }
+      }
+    },
+    `gatsby-transformer-sharp`,
+    {
       resolve: "gatsby-plugin-sitemap",
       options: {
         query: `
