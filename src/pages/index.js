@@ -1,13 +1,11 @@
 // @ts-nocheck
 import * as React from "react"
 import { Seo } from "../components/atoms/seo/seo";
-import GlobalStyles from "../styles/GlobalStyles";
 import Input from "../components/atoms/Input/Input";
 import Button from "../components/atoms/Button/Button";
 import Link from "../components/atoms/Link/Link";
 import HamburgerButton from "../components/atoms/HamburgerButton/HamburgerButton";
 import FAQElement from "../components/atoms/FAQElement/FAQElement";
-
 
 const IndexPage = () => {
 
@@ -16,15 +14,14 @@ const IndexPage = () => {
 
   return (
     <main>
-      <GlobalStyles />
       <h1>Strona główna</h1>
-      {/* <HamburgerButton openMenu={() => setIsOpen(!isOpen)}  isOpen={isOpen} isBlack></HamburgerButton>
+      <HamburgerButton openMenu={() => setIsOpen(!isOpen)}  isOpen={isOpen} isBlack></HamburgerButton>
       <Input name='name' type='text' error={error} label='Imię' />
       <Input name='name' type='text' error={error} label='Email' />
       <Input name='name' type='textarea' error={error} label='Wiadomość' />
-      <Button text='Wyślij' type='button' /> */}
+      <Button text='Wyślij' type='button' />
       <FAQElement question='Pytanie' answer='odpowiedź' />
-      {/* <Link>Przenieś</Link> */}
+      <Link>Przenieś</Link>
     </main>
   )
 }

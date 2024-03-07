@@ -1,12 +1,12 @@
 // @ts-nocheck
-const React = require("react");
-const GlobalLayout = require('./src/components/templates/GlobalLayout/GlobalLayout').default;
+import React from 'react';
+import GlobalLayout from './src/components/templates/GlobalLayout/GlobalLayout';
 
-exports.wrapPageElement = ({ element, props }) => {
+export const wrapPageElement = ({ element, props }) => {
     return <GlobalLayout {...props}>{ element }</GlobalLayout>
 }
 
-exports.onRenderBody = ({ setHeadComponents }) => {
+export const onRenderBody = ({ setHeadComponents }) => {
     setHeadComponents([
         <link
             rel='preload'
