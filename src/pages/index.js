@@ -1,11 +1,6 @@
 // @ts-nocheck
 import * as React from "react"
 import { Seo } from "../components/atoms/seo/seo";
-import Input from "../components/atoms/Input/Input";
-import Button from "../components/atoms/Button/Button";
-import Link from "../components/atoms/Link/Link";
-import HamburgerButton from "../components/atoms/HamburgerButton/HamburgerButton";
-import FAQElement from "../components/atoms/FAQElement/FAQElement";
 import { graphql } from "gatsby";
 import HeroSection from "../components/arganisms/HeroSection/HeroSection";
 
@@ -18,7 +13,6 @@ const IndexPage = ({ data }) => {
   } } = data;
 
   const [error, setError] = React.useState(false);
-  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     <main>
@@ -40,15 +34,30 @@ export const Head = () => {
 
 export const query = graphql`
   query homePageQuery {
-      datoCmsHomePage {
-        mainSectionHeroImage {
-          alt
-          title
-          url
-          gatsbyImageData
-        }
-        mainSectionPageDescription
-        mainSectionPageTitle
+    datoCmsHomePage {
+      mainSectionHeroImage {
+        alt
+        title
+        gatsbyImageData
+      }
+      mainSectionPageTitle
+      mainSectionPageDescription
+      secondSectionTitle
+      secondSectionDesc
+      secondSectionPhoto {
+        alt
+        title
+        gatsbyImageData
+      }
+      thirdSectionTitle
+      thirdSectionPhoto {
+        alt
+        title
+        gatsbyImageData
+      }
+      lista {
+        element
+      }
     }
   }
 `;
