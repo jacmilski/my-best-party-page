@@ -3,6 +3,8 @@ import * as React from "react"
 import { Seo } from "../components/atoms/seo/seo";
 import { graphql } from "gatsby";
 import HeroSection from "../components/arganisms/HeroSection/HeroSection";
+import MyBestPartySection from "../components/molecules/MyBestPartySection/MyBestPartySection";
+import ListSection from "../components/molecules/ListSection/ListSection";
 
 const IndexPage = ({ data }) => {
 
@@ -10,16 +12,31 @@ const IndexPage = ({ data }) => {
     mainSectionPageDescription,
     mainSectionPageTitle,
     mainSectionHeroImage,
+    secondSectionTitle,
+    secondSectionDesc,
+    secondSectionPhoto,
+    thirdSectionTitle,
+    thirdSectionPhoto,
+    list
   } } = data;
-
-  const [error, setError] = React.useState(false);
 
   return (
     <main>
       <HeroSection
         title={ mainSectionPageTitle }
         desc={ mainSectionPageDescription }
-        heroImage={ mainSectionHeroImage } />
+        heroImage={mainSectionHeroImage}
+      />
+      <MyBestPartySection
+        image={secondSectionPhoto}
+        title={secondSectionTitle}
+        desc={secondSectionDesc}
+      />
+      <ListSection 
+        image={thirdSectionPhoto}
+        title={thirdSectionTitle}
+        list={list}
+      />
     </main>
   )
 }
@@ -55,7 +72,7 @@ export const query = graphql`
         title
         gatsbyImageData
       }
-      lista {
+      list {
         element
       }
     }
