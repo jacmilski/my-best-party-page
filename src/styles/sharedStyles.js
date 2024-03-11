@@ -1,3 +1,4 @@
+// @ts-nocheck
 import styled, { css } from "styled-components";
 
 export const focusVisibleStyles = css`
@@ -9,4 +10,19 @@ export const focusVisibleStyles = css`
     }
 `;
 
-export const StyledSecondTitle = styled.h2``;
+export const StyledSecondTitle = styled.h2`
+    font-size: clamp(32px, 2.5vw, 48px);
+    text-align: ${({ $mobileTextAlign }) => $mobileTextAlign ?? 'left'};
+
+    @media only screen and (min-width: 768px) {
+        text-align: ${({ $mobileTextAlign, $desktopTextAlign }) =>
+            $desktopTextAlign ? $desktopTextAlign : $mobileTextAlign
+        }
+    }
+`;
+
+export const StyledGlobalWrapper = styled.div`
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+`;

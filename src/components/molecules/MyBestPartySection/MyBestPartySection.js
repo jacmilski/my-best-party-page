@@ -17,7 +17,7 @@ const MyBestPartySection = ({ image, title, desc }) => {
   return (
     <StyledMyPartySection>
         <StyledTextWrapper>
-          <StyledSecondTitle>
+          <StyledSecondTitle $mobileTextAlign='center'>
             {title}
           </StyledSecondTitle>
           <StyledDesc>
