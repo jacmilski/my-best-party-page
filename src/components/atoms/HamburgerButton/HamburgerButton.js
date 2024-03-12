@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React, { useState } from 'react';
+import React from 'react';
 import { StyledHamburgerBox, StyledHamburgerButton, StyledHamburgerInner } from './HamburgerButton.styles';
 
 const HamburgerButton = ({ openMenu, isOpen, isBlack }) => {

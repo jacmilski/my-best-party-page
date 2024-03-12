@@ -12,8 +12,6 @@ import { StyledSecondTitle } from '../../../styles/sharedStyles';
 
 const MyBestPartySection = ({ image, title, desc }) => {
 
-  console.log(image.alt);
-
   return (
     <StyledMyPartySection>
         <StyledTextWrapper>

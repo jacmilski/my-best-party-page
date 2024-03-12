@@ -5,8 +5,6 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const HeroSection = ({ title, desc, heroImage }) => {
 
-    console.log(heroImage)
-
     return (
         <StyledHeroSection>
             <StyledImageWrapper>
