@@ -24,7 +24,7 @@ export const StyledImageWrapper = styled.div`
     width: 100%;
     height: 100%;
 
-    .gatsby-image-wrapper { // klasa tworzona przez plugin gatsby-plugin-image
+    .gatsby-image-wrapper {
         width: 100%;
         height: 100%;
     }
