@@ -27,7 +27,28 @@ function Contact() {
     resolver: yupResolver(formValidation),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const encode = (data) => {
+    return Object.keys(data)
+            .map( key => {
+              // console.log('ENCODE: ',encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+              return encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+            }).join('&');
+  }
+
+  const onSubmit = (data) => {
+    fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: encode({'form-name': 'kontakt', ...data})
+    }).then(() => {
+      setIsError(false);
+      setIsSend(true);
+    }).catch((err) => {
+      setIsError(true);
+      setIsSend(false);
+      console.log(err.message);
+    })
+  };
 
   const { datoCmsContactSection } = useStaticQuery(graphql`
   query ContactQuery {
