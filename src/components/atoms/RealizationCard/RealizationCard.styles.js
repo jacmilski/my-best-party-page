@@ -22,6 +22,8 @@ export const StyledImageWrapper = styled.div`
 `;
 
 export const StyledTitleWrapper = styled.div`
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 85px;
     background-color: rgba(0,0,0,0.57);

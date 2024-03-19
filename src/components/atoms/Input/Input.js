@@ -2,7 +2,7 @@
 import React from 'react';
 import { StyledError, StyledInputWrapper, StyledLabel, StyledTextarea, StyledInput } from './Input.styles';
 
-const Input = ({ name, type, error, label }) => {
+const Input = ({ name, type, error, label, register }) => {
 
     return (
         <StyledInputWrapper>
@@ -10,9 +10,9 @@ const Input = ({ name, type, error, label }) => {
             {(() => {
                 switch(type) {
                     case 'textarea': 
-                        return <StyledTextarea id={name} />
+                        return <StyledTextarea id={name} {...register} />
                     default:
-                        return <StyledInput id={name} type={type} />
+                        return <StyledInput id={name} type={type} {...register} />
                 }
             })()}
             {error ? <StyledError>{error}</StyledError> : null}

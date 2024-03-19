@@ -5,6 +5,8 @@ import { graphql } from "gatsby";
 import HeroSection from "../components/arganisms/HeroSection/HeroSection";
 import MyBestPartySection from "../components/molecules/MyBestPartySection/MyBestPartySection";
 import ListSection from "../components/molecules/ListSection/ListSection";
+import OurRealizationSection from "../components/arganisms/OurRealizationSection/OurRealizationSection";
+import FAQContactSection from "../components/arganisms/FAQContactSection/FAQContactSection";
 
 const IndexPage = ({ data }) => {
 
@@ -37,6 +39,8 @@ const IndexPage = ({ data }) => {
         title={thirdSectionTitle}
         list={list}
       />
+      <OurRealizationSection />
+      <FAQContactSection />
     </main>
   )
 }
@@ -73,6 +77,7 @@ export const query = graphql`
         gatsbyImageData
       }
       list {
+        id
         element
       }
     }
