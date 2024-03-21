@@ -6,8 +6,8 @@ export const StyledLink = styled(Link)`
     text-decoration: none;
     color: var(--white);
     font-size: 20px;
-    cursor: pointer;
     transition: color 250ms linear;
+    cursor: pointer;
 
     &.color--black {
         color: var(--black);
@@ -21,10 +21,11 @@ export const StyledLink = styled(Link)`
         color: var(--black);
     }
 
-    &:hover {
+    &:hover, &:active {
         color: var(--red);
     }
 
     ${focusVisibleStyles};
-
 `;
+
+/* TU JEST OK */

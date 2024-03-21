@@ -14,7 +14,7 @@ import Button from '../../atoms/Button/Button';
 import Input from '../../atoms/Input/Input';
 import { formValidation, labels } from './Contact.data';
 
-function Contact() {
+function Contact({ isContactPage }) {
 
   const [isSend, setIsSend] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -30,8 +30,7 @@ function Contact() {
   const encode = (data) => {
     return Object.keys(data)
             .map( key => {
-              // console.log('ENCODE: ',encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-              return encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+              return encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);
             }).join('&');
   }
 
@@ -81,9 +80,9 @@ function Contact() {
 ]
 
   return (
-    <StyledContact>
+    <StyledContact $isContactPage={isContactPage}>
       <StyledSecondTitle>
-       {/*  {datoCmsContactSection.title} */}
+        {datoCmsContactSection.title}
       </StyledSecondTitle>
       <StyledContactForm
         onSubmit={handleSubmit(onSubmit)}

@@ -1,12 +1,13 @@
+// @ts-nocheck
 import styled from 'styled-components';
 
 export const StyledContact = styled.div`
     width: 100%;
-    padding: clamp(34px, 4,444vw, 64px) clamp(22px, 4,722vw, 68px) 
-            clamp(34px, 4,444vw, 64px) clamp(22px, 2,639vw, 38px);
+    padding: clamp(34px, 4.444vw, 64px) clamp(22px, 4.722vw, 68px) 
+            clamp(34px, 4.444vw, 64px) clamp(22px, 2.639vw, 38px);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 
     @media only screen and (min-width: 590px) {
         align-items: center;
@@ -14,7 +15,8 @@ export const StyledContact = styled.div`
 
     @media only screen and (min-width: 954px) {
         width: 50%;
-        align-items: flex-end;
+        align-items: center;
+        padding-top: ${({ $isContactPage }) => $isContactPage ? "148px" : "clamp(34px, 4.444vw, 64px)"};
     }
 
     @media only screen and (min-width: 1440px) {
@@ -23,7 +25,7 @@ export const StyledContact = styled.div`
 `;
 
 export const StyledContactForm = styled.form`
-    margin-top: clamp(34px, 5.903, 85px);
+    margin-top: clamp(34px, 5.903vw, 85px);
     width: 100%;
     max-width: 438px;
     display: flex;

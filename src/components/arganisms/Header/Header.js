@@ -12,28 +12,35 @@ const Header = () => {
 
     const location = useLocation();
 
-    const isOurRealizationPage =
-        location.pathname === '/nasze_realizacje/' ||
-        location.pathname.includes('/realizacja/')
+    console.log(location.pathname)
+
+    const isOurRealizationPage = location.pathname === '/nasze_realizacje/'
 
     return (
         <StyledHeader>
             <StyledLogo to='/'>
                 <Logo
-                    isBlack={isOurRealizationPage ||
+                    isBlack={
+                        isOurRealizationPage ||
+                        location.pathname === '/kontakt/' ||
+                        location.pathname.includes('/realizacja/')
+                    }
+                />
+            </StyledLogo>
+            <Nav isBlack={isOurRealizationPage} isOpen={isOpen} setIstOpen={setIsOpen} />
+            <HamburgerButton
+                isBlack={
+                    isOurRealizationPage ||
                     location.pathname === '/kontakt/' ||
                     location.pathname.includes('/realizacja/')
                 }
-            />
-            </StyledLogo>
-            <Nav isBlack={isOurRealizationPage} isOpen={isOpen} />
-            <HamburgerButton
-                isBlack={isOurRealizationPage}
                 isOpen={isOpen}
-                menuOpen={(prev) => setIsOpen(!prev)}
+                openMenu={() => setIsOpen((prev) => !prev)}
             />
         </StyledHeader>
     )
 }
 
 export default Header;
+
+/* TU JEST */

@@ -11,12 +11,11 @@ const HamburgerButton = ({ openMenu, isOpen, isBlack }) => {
             $isOpen={isOpen}
         >
             <StyledHamburgerBox>
-                <StyledHamburgerInner $isOpen={isOpen} $isBlack={isBlack}>
-
-                </StyledHamburgerInner>
+                <StyledHamburgerInner $isOpen={isOpen} $isBlack={isBlack} />
             </StyledHamburgerBox>
         </StyledHamburgerButton>
     )
 };
 
 export default HamburgerButton;
+/* TU JEST ok */

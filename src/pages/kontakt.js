@@ -1,9 +1,7 @@
-import React from 'react'
+// @ts-nocheck
+import React from 'react';
+import FAQContactSection from '../components/arganisms/FAQContactSection/FAQContactSection';
 
-const kontakt = () => {
-  return (
-    <div>kontakt</div>
-  )
-}
+const ContactSite = () => <FAQContactSection isContactPage />
 
-export default kontakt;
+export default ContactSite;
