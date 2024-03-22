@@ -7,7 +7,7 @@ require("dotenv").config();
 module.exports = {
   siteMetadata: {
     title: `my-best-party-page`,
-    siteUrl: `https://mybestpartypage.pl`
+    siteUrl: `https://mybestpartypage.pl`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -19,8 +19,8 @@ module.exports = {
           formats: [`auto`, `webp`],
           placeholder: `dominantColor`,
           quality: 90,
-        }
-      }
+        },
+      },
     },
     `gatsby-transformer-sharp`,
     {
@@ -40,16 +40,23 @@ module.exports = {
           }
         }
       `,
-        resolveSiteUrl: ({ site: { siteMetadata: { siteUrl } } }) => siteUrl,
+        resolveSiteUrl: ({
+          site: {
+            siteMetadata: { siteUrl },
+          },
+        }) => siteUrl,
         resolvePages: ({
           allSitePage: { nodes: allPages },
-          site: { siteMetadata: { siteUrl } }
-        }) => allPages.map(({ path }) => ({
-          url: `${siteUrl}${path}`,
-          path,
-          changefreq: `daily`,
-          priority: 0.7,
-        })),
+          site: {
+            siteMetadata: { siteUrl },
+          },
+        }) =>
+          allPages.map(({ path }) => ({
+            url: `${siteUrl}${path}`,
+            path,
+            changefreq: `daily`,
+            priority: 0.7,
+          })),
         serialize: ({ path }) => ({ url: path }),
       },
     },
@@ -62,7 +69,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
-        icon: `src/images/icon.png`
+        icon: `src/images/icon.png`,
       },
     },
     {
@@ -72,16 +79,16 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: 'https://mybestpartypage.pl',
-        sitemap: 'https://mybestpartypage.pl/sitemap-index.xml',
+        host: "https://mybestpartypage.pl",
+        sitemap: "https://mybestpartypage.pl/sitemap-index.xml",
         policy: [
           process.env.NODE_ENV === `production`
-            ? { userAgent: '*', allow: '/' }
-            : { userAgent: '*', disallow: '/' }
-        ]
-      }
-    }
-  ]
+            ? { userAgent: "*", allow: "/" }
+            : { userAgent: "*", disallow: "/" },
+        ],
+      },
+    },
+  ],
 };

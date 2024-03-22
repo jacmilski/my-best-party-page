@@ -1,3 +1,3 @@
 export const OurRealizationSectionLabels = {
-    heading: 'Nasze realizacje',
-}
+  heading: "Nasze realizacje",
+};

@@ -1,15 +1,15 @@
 // @ts-nocheck
-import React from 'react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import React from "react";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import {
   StyledCircleWrapper,
   StyledImageWrapper,
   StyledList,
   StyledListSection,
-  StyledTextWrapper
-} from './ListSection.styles';
-import { StyledSecondTitle } from '../../../styles/sharedStyles';
-import Circle from '../../atoms/Icons/Circle';
+  StyledTextWrapper,
+} from "./ListSection.styles";
+import { StyledSecondTitle } from "../../../styles/sharedStyles";
+import Circle from "../../atoms/Icons/Circle";
 
 const ListSection = ({ image, title, list }) => {
   return (
@@ -33,7 +33,7 @@ const ListSection = ({ image, title, list }) => {
         </StyledList>
       </StyledTextWrapper>
     </StyledListSection>
-  )
-}
+  );
+};
 
 export default ListSection;

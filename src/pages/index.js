@@ -1,5 +1,5 @@
 // @ts-nocheck
-import * as React from "react"
+import * as React from "react";
 import { Seo } from "../components/atoms/seo/seo";
 import { graphql } from "gatsby";
 import HeroSection from "../components/arganisms/HeroSection/HeroSection";
@@ -9,24 +9,25 @@ import OurRealizationSection from "../components/arganisms/OurRealizationSection
 import FAQContactSection from "../components/arganisms/FAQContactSection/FAQContactSection";
 
 const IndexPage = ({ data }) => {
-
-  const { datoCmsHomePage: {
-    mainSectionPageDescription,
-    mainSectionPageTitle,
-    mainSectionHeroImage,
-    secondSectionTitle,
-    secondSectionDesc,
-    secondSectionPhoto,
-    thirdSectionTitle,
-    thirdSectionPhoto,
-    list
-  } } = data;
+  const {
+    datoCmsHomePage: {
+      mainSectionPageDescription,
+      mainSectionPageTitle,
+      mainSectionHeroImage,
+      secondSectionTitle,
+      secondSectionDesc,
+      secondSectionPhoto,
+      thirdSectionTitle,
+      thirdSectionPhoto,
+      list,
+    },
+  } = data;
 
   return (
     <main>
       <HeroSection
-        title={ mainSectionPageTitle }
-        desc={ mainSectionPageDescription }
+        title={mainSectionPageTitle}
+        desc={mainSectionPageDescription}
         heroImage={mainSectionHeroImage}
       />
       <MyBestPartySection
@@ -34,7 +35,7 @@ const IndexPage = ({ data }) => {
         title={secondSectionTitle}
         desc={secondSectionDesc}
       />
-      <ListSection 
+      <ListSection
         image={thirdSectionPhoto}
         title={thirdSectionTitle}
         list={list}
@@ -42,16 +43,21 @@ const IndexPage = ({ data }) => {
       <OurRealizationSection />
       <FAQContactSection />
     </main>
-  )
-}
+  );
+};
 
 export default IndexPage;
 
 export const Head = () => {
   return (
-    <Seo title="Strona główna" description="Strona główna" pathname="/" children={IndexPage} />
-  )
-}
+    <Seo
+      title="Strona główna"
+      description="Strona główna"
+      pathname="/"
+      children={IndexPage}
+    />
+  );
+};
 
 export const query = graphql`
   query homePageQuery {
