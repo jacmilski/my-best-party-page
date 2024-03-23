@@ -12,6 +12,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -22,7 +23,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-transformer-sharp`,
     {
       resolve: "gatsby-plugin-sitemap",
       options: {

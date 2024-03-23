@@ -22,7 +22,7 @@ export const StyledLink = styled(Link)`
   }
 
   &:hover,
-  &:active {
+  &.active {
     color: var(--red);
   }
 
